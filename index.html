@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="refresh" content="30">
+    <title>ddl</title>
+    <style>
+        body{
+            background-color: lightskyblue;
+        }
+    </style>
+    <script type="text/javascript">
+        
+        window.onload = function(){
+            var time = document.getElementById("time");
+            function getTime() {
+                var myTime = new Date();   //获取当前的系统时间
+                var myYear = myTime.getFullYear();
+                var myMonth = myTime.getMonth();
+                var myDay = myTime.getDay();
+                var myHour = myTime.getHours();     //时
+                var myMin = myTime.getMinutes();    //分
+                function toTwo(a){
+                    return a>9?a:"0"+a;
+                }
+                var str = "现在是"+myYear+"年"+myMonth+"月"+myDay+"日"+toTwo(myHour)+":"+toTwo(myMin);
+                return str;
+            }
+            time.innerHTML=getTime();
+            
+
+            
+        }
+
+    </script>
+</head>
+<body>
+
+    <h1 id="time">Time</h1>
+    <input type="date">
+</body>
+</html>
